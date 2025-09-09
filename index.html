@@ -5,6 +5,9 @@
   <title>WALABI | Agri-Food Digital Transformation that Delivers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="WALABI aligns strategy, data, and systems so agri-food organizations deliver measurable outcomes—through business architecture, interoperability, smart information systems, and digital trends.">
+  <!-- If deploying as a GitHub project page, uncomment and set your repo base:
+  <base href="/testWALABI/">
+  -->
   <link rel="stylesheet" href="assets/styles.css?v=2">
   <link rel="icon" href="assets/images/favicon.ico">
 </head>
@@ -45,65 +48,71 @@
         <a href="#services">Services</a>
         <a href="academy.html">Academy</a>
         <a href="#resources">Resources</a>
-        <a class="btn btn-primary" href="#">Book Intake</a>
+        <a class="btn btn-primary" href="https://cal.com/yourname/intro">Book Intake</a>
       </nav>
     </div>
   </header>
 
   <main>
-<section class="hero">
-  <div class="container hero-inner">
-    <div>
-      <h1>Agri-Food Digital Transformation that Delivers</h1>
-      <p class="lead">We align strategy, data, and systems so your initiatives drive measurable gains in sustainability, efficiency, and growth.</p>
-      <div class="cta-row">
-        <a class="btn btn-primary" href="#">Book a 20-min consult</a>
-        <a class="btn btn-ghost" href="#services">Explore services</a>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div>
+          <h1>Agri-Food Digital Transformation that Delivers</h1>
+          <p class="lead">We align strategy, data, and systems so your initiatives drive measurable gains in sustainability, efficiency, and growth.</p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="https://cal.com/yourname/intro">Book a 20-min consult</a>
+            <a class="btn btn-ghost" href="#services">Explore services</a>
+          </div>
+          <ul class="chips">
+            <li class="chip">EU Projects</li>
+            <li class="chip">Co-ops & Producer Groups</li>
+            <li class="chip">SMEs & Public Agencies</li>
+          </ul>
+        </div>
+        <div class="stat-card" role="region" aria-label="Stats">
+          <div class="stat"><span class="stat-number">4</span><span class="stat-label">Core Themes</span></div>
+          <div class="stat"><span class="stat-number">10+</span><span class="stat-label">Toolkits</span></div>
+          <div class="stat"><span class="stat-number">EU</span><span class="stat-label">Ready</span></div>
+        </div>
       </div>
-      <ul class="chips">
-        <li class="chip">EU Projects</li>
-        <li class="chip">Co-ops & Producer Groups</li>
-        <li class="chip">SMEs & Public Agencies</li>
-      </ul>
-    </div>
-    <div class="stat-card">
-      <div class="stat"><span class="stat-number">4</span><span class="stat-label">Core Themes</span></div>
-      <div class="stat"><span class="stat-number">10+</span><span class="stat-label">Toolkits</span></div>
-      <div class="stat"><span class="stat-number">EU</span><span class="stat-label">Ready</span></div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <!-- OUR THEMES & SERVICES -->
     <section id="services" class="container section">
       <h2>Our Themes & Services</h2>
       <div class="cards">
-        <article class="card">
+        <!-- Make the entire card a link to the service page -->
+        <a class="card" href="services/business-architecture.html" aria-label="Business Architecture">
           <div class="icon-wrap green"><svg class="icon"><use href="#ic-architecture"/></svg></div>
           <h3>Business Architecture</h3>
           <p>Target architecture map, transformation roadmap, and risk &amp; dependency register.</p>
           <ul class="meta"><li>4–8 weeks</li><li>Outcome: faster delivery, audit-ready decisions.</li></ul>
-        </article>
+          <span class="btn btn-link">Explore →</span>
+        </a>
 
-        <article class="card">
+        <a class="card" href="services/interoperability-data-sharing.html" aria-label="Interoperability & Data Sharing">
           <div class="icon-wrap blue"><svg class="icon"><use href="#ic-interop"/></svg></div>
           <h3>Interoperability &amp; Data Sharing</h3>
           <p>Interop gap assessment, semantic model draft, and standards alignment plan.</p>
           <ul class="meta"><li>Outcome: trusted data collaboration; dataspace readiness.</li></ul>
-        </article>
+          <span class="btn btn-link">Explore →</span>
+        </a>
 
-        <article class="card">
+        <a class="card" href="services/smart-business-information-systems.html" aria-label="Smart Business Information Systems">
           <div class="icon-wrap purple"><svg class="icon"><use href="#ic-systems"/></svg></div>
           <h3>Smart Business Information Systems</h3>
           <p>System map, reference architecture, integration options, and UAT plan.</p>
           <ul class="meta"><li>Outcome: decisions from descriptive → prescriptive → generative.</li></ul>
-        </article>
+          <span class="btn btn-link">Explore →</span>
+        </a>
 
-        <article class="card">
+        <a class="card" href="services/digital-trends-exploration.html" aria-label="Digital Trends Exploration">
           <div class="icon-wrap orange"><svg class="icon"><use href="#ic-trends"/></svg></div>
           <h3>Digital Trends Exploration</h3>
           <p>Trend briefs, opportunity/risk matrix, pilot concepts, and a 6-month action agenda.</p>
           <ul class="meta"><li>Outcome: de-risked innovation portfolio tied to value.</li></ul>
-        </article>
+          <span class="btn btn-link">Explore →</span>
+        </a>
       </div>
     </section>
 
@@ -120,24 +129,29 @@
       </div>
     </section>
 
+    <!-- STARTER KITS -->
     <section id="resources" class="container section">
       <h2>Starter Kits</h2>
       <div class="cards resources">
-        <a class="card link" href="#" aria-label="Download Digital Trends Starter Kit">
+
+        <!-- Point these to your /assets/kits/ files -->
+        <a class="card link" href="assets/kits/Digital_Trends_Starter_Kit.zip" download aria-label="Download Digital Trends Starter Kit">
           <div class="icon-wrap yellow"><svg class="icon"><use href="#ic-download"/></svg></div>
           <div>
             <h4>Digital Trends — Starter Kit</h4>
             <p class="muted">Briefs + Action Agenda template</p>
           </div>
         </a>
-        <a class="card link" href="#" aria-label="Download Interoperability Readiness Checklist">
+
+        <a class="card link" href="assets/kits/Interoperability_Readiness_Kit.zip" download aria-label="Download Interoperability Readiness Checklist">
           <div class="icon-wrap green"><svg class="icon"><use href="#ic-download"/></svg></div>
           <div>
             <h4>Interoperability Readiness Checklist</h4>
             <p class="muted">Org · Tech · Legal</p>
           </div>
         </a>
-        <a class="card link" href="#" aria-label="Download Smart BIS Worksheet">
+
+        <a class="card link" href="assets/kits/Smart_BIS_Worksheet_Kit.zip" download aria-label="Download Smart BIS Worksheet">
           <div class="icon-wrap purple"><svg class="icon"><use href="#ic-download"/></svg></div>
           <div>
             <h4>Smart BIS — Worksheet</h4>
@@ -153,7 +167,7 @@
           <h3>Ready to make digital deliver?</h3>
           <p class="muted">Book a free 20-minute intake with the WALABI team.</p>
         </div>
-        <a class="btn btn-primary" href="#">Book Intake</a>
+        <a class="btn btn-primary" href="https://cal.com/yourname/intro">Book Intake</a>
       </div>
     </section>
   </main>
@@ -161,7 +175,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>© WALABI — Wageningen Lab for Agri-Food Business Informatics</p>
-      <nav><a href="academy.html">Academy</a> · <a href="#services">Services</a> · <a href="#resources">Resources</a></nav>
+      <nav>
+        <a href="academy.html">Academy</a> ·
+        <a href="#services">Services</a> ·
+        <a href="#resources">Resources</a>
+      </nav>
     </div>
   </footer>
 </body>
