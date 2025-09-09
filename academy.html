@@ -2,59 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>WALABI Academy | Courses & Templates for Agri-Food Digital</title>
+  <title>WALABI Academy | Courses & Templates</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Short, practical lessons and templates: business architecture, interoperability, smart information systems, and digital trends.">
-  <link rel="stylesheet" href="assets/styles.css?v=1">
-  <!-- JSON-LD: ItemList of Course entries -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"ItemList",
-    "itemListElement":[
-      {
-        "@type":"ListItem","position":1,
-        "item":{"@type":"Course","name":"Interoperability Basics","description":"Semantic modeling, standards alignment, and dataspace readiness for agri-food.","provider":{"@type":"Organization","name":"WALABI","url":"https://arnabgupta1979.github.io/testWALABI/"}}}
-      ,
-      {
-        "@type":"ListItem","position":2,
-        "item":{"@type":"Course","name":"Smart Business Information Systems","description":"From system mapping to reference architectures and UAT planning.","provider":{"@type":"Organization","name":"WALABI","url":"https://arnabgupta1979.github.io/testWALABI/"}}}
-    ]
-  }
-  </script>
+  <meta name="description" content="Short, practical lessons and templates to apply digital in agri-food—faster.">
+  <link rel="stylesheet" href="assets/styles.css?v=2">
 </head>
-<body>
+<body class="accent-green">
+
+  <!-- minimal icons reused -->
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute">
+    <symbol id="ic-cap" viewBox="0 0 24 24">
+      <path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M5 12v3c0 2 7 2 7 2s7 0 7-2v-3" />
+    </symbol>
+    <symbol id="ic-download" viewBox="0 0 24 24">
+      <path d="M12 4v10M8 10l4 4 4-4M4 18h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
   <header class="site-header">
-    <a class="brand" href="./">WALABI</a>
-    <nav class="nav"><a href="index.html">Home</a></nav>
+    <div class="container header-inner">
+      <a class="brand" href="./">WALABI</a>
+      <nav class="nav"><a href="index.html">Home</a></nav>
+    </div>
   </header>
 
   <main class="container">
     <section class="hero hero-small">
       <h1>WALABI Academy</h1>
-      <p>Short, practical lessons and templates to apply digital in agri-food—faster.</p>
+      <p class="lead">Short, practical lessons and templates to apply digital in agri-food—faster.</p>
       <div class="cta-row">
-        <a class="btn primary" href="#">Download starter kit</a>
+        <a class="btn btn-primary" href="#"><svg class="icon inline"><use href="#ic-download"/></svg> Download starter kit</a>
       </div>
+      <ul class="chips">
+        <li class="chip">Beginner</li>
+        <li class="chip">Intermediate</li>
+        <li class="chip">Templates</li>
+      </ul>
     </section>
 
-    <section>
+    <section class="section">
       <h2>Courses</h2>
       <div class="cards">
         <article class="card">
+          <div class="icon-wrap blue"><svg class="icon"><use href="#ic-cap"/></svg></div>
           <h3>Interoperability Basics</h3>
-          <p>Level: Beginner · Format: 90-min video + checklist</p>
-          <a class="btn" href="#">Request access</a>
+          <p>Level: Beginner · Format: 90-min video + checklist.</p>
+          <div class="badges">
+            <span class="badge blue">Interoperability</span>
+            <span class="badge green">Beginner</span>
+          </div>
+          <a class="btn btn-ghost" href="#">Request access</a>
         </article>
+
         <article class="card">
+          <div class="icon-wrap purple"><svg class="icon"><use href="#ic-cap"/></svg></div>
           <h3>Smart Business Information Systems</h3>
-          <p>Level: Intermediate · Format: 2h video + worksheet</p>
-          <a class="btn" href="#">Request access</a>
+          <p>Level: Intermediate · Format: 2h video + worksheet.</p>
+          <div class="badges">
+            <span class="badge purple">Systems</span>
+            <span class="badge orange">Intermediate</span>
+          </div>
+          <a class="btn btn-ghost" href="#">Request access</a>
         </article>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer"><p>© WALABI</p></footer>
+  <footer class="site-footer">
+    <div class="container footer-inner"><p>© WALABI</p></div>
+  </footer>
 </body>
 </html>
