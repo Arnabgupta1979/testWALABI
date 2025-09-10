@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="assets/styles.css?v=2">
   <link rel="icon" href="assets/images/favicon.ico">
 </head>
-<body class="accent-blue theme-dark">
+<body class="accent-blue">
 
   <!-- Inline icon sprites (no external libs) -->
   <svg aria-hidden="true" width="0" height="0" style="position:absolute">
@@ -45,6 +45,7 @@
     <div class="container header-inner">
       <a class="brand" href="./">WALABI</a>
       <nav class="nav">
+        <button id="themeToggle" class="btn btn-ghost" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button>
         <a href="#services">Services</a>
         <a href="academy.html">Academy</a>
         <a href="#resources">Resources</a>
@@ -182,5 +183,41 @@
       </nav>
     </div>
   </footer>
+  <script>
+    (function(){
+      var storageKey = 'theme';
+      var btn = null;
+      function prefersDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+      function getSaved(){ return localStorage.getItem(storageKey); }
+      function applyTheme(mode){
+        var body = document.body;
+        var isDark = mode === 'dark' || (mode === null && prefersDark());
+        body.classList.toggle('theme-dark', isDark);
+        if(btn){
+          btn.setAttribute('aria-pressed', String(isDark));
+          btn.textContent = isDark ? '☀️' : '🌙';
+          btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+        }
+      }
+      function toggle(){
+        var current = document.body.classList.contains('theme-dark');
+        var next = current ? 'light' : 'dark';
+        localStorage.setItem(storageKey, next);
+        applyTheme(next);
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+        btn = document.getElementById('themeToggle');
+        if(btn){ btn.addEventListener('click', toggle); }
+        applyTheme(getSaved());
+      });
+      try{
+        if(window.matchMedia){
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(){
+            if(!getSaved()){ applyTheme(null); }
+          });
+        }
+      }catch(e){}
+    })();
+  </script>
 </body>
 </html>
