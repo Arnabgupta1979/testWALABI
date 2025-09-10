@@ -22,7 +22,7 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="brand" href="./">WALABI</a>
-      <nav class="nav"><a href="index.html">Home</a></nav>
+      <nav class="nav"><button id="themeToggle" class="btn btn-ghost" type="button" aria-pressed="false" aria-label="Toggle dark mode">🌙</button><a href="index.html">Home</a></nav>
     </div>
   </header>
 
@@ -71,5 +71,22 @@
   <footer class="site-footer">
     <div class="container footer-inner"><p>© WALABI</p></div>
   </footer>
+  <script>
+    (function(){
+      var storageKey = 'theme'; var btn = null;
+      function prefersDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
+      function getSaved(){ return localStorage.getItem(storageKey); }
+      function clearThemes(){ document.body.classList.remove('theme-dark','theme-light'); }
+      function applyTheme(mode){
+        clearThemes();
+        var isDark = mode === 'dark' || (mode === null && prefersDark());
+        document.body.classList.add(isDark ? 'theme-dark' : 'theme-light');
+        if(btn){ btn.setAttribute('aria-pressed', String(isDark)); btn.textContent = isDark ? '☀️' : '🌙'; btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode'; }
+      }
+      function toggle(){ var isDark = document.body.classList.contains('theme-dark'); var next = isDark ? 'light' : 'dark'; localStorage.setItem(storageKey, next); applyTheme(next); }
+      document.addEventListener('DOMContentLoaded', function(){ btn = document.getElementById('themeToggle'); if(btn){ btn.addEventListener('click', toggle); } applyTheme(getSaved()); });
+      try{ var mq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)'); if(mq){ if(mq.addEventListener){ mq.addEventListener('change', function(){ if(!getSaved()){ applyTheme(null); } }); } else if(mq.addListener){ mq.addListener(function(){ if(!getSaved()){ applyTheme(null); } }); } } }catch(e){}
+    })();
+  </script>
 </body>
 </html>
