@@ -184,17 +184,24 @@ body.theme-dark .chip{background:#0f1520}
 body.theme-dark .card, body.theme-dark .panel, body.theme-dark .stat-card{background:#0f1520}
 body.theme-dark .icon-wrap{background:#0b0f14}
 
-/* ---------- Dark mode ---------- */
+/* Explicit light theme to override system dark */
+body.theme-light{
+  --ink:#1b1f24; --muted:#667085; --bg:#ffffff; --card:#fbfbfc; --line:#e5e7eb;
+  --shadow-sm:0 2px 8px rgba(16,24,40,.06);
+  --shadow-md:0 8px 24px rgba(16,24,40,.08);
+}
+
+/* ---------- Dark mode (follows OS when no explicit theme-light) ---------- */
 @media (prefers-color-scheme: dark){
-  :root{
+  body:not(.theme-light){
     --ink:#e6e9ee; --muted:#98a2b3; --bg:#0b0f14; --card:#0f1520; --line:#1f2937;
     --shadow-sm:0 2px 8px rgba(0,0,0,.4);
     --shadow-md:0 12px 28px rgba(0,0,0,.55);
   }
-  .site-header{background:rgba(11,15,20,.7)}
-  .btn{background:#0f1520}
-  .btn-ghost{background:transparent}
-  .chip{background:#0f1520}
-  .card, .panel, .stat-card{background:#0f1520}
-  .icon-wrap{background:#0b0f14}
+  body:not(.theme-light) .site-header{background:rgba(11,15,20,.7)}
+  body:not(.theme-light) .btn{background:#0f1520}
+  body:not(.theme-light) .btn-ghost{background:transparent}
+  body:not(.theme-light) .chip{background:#0f1520}
+  body:not(.theme-light) .card, body:not(.theme-light) .panel, body:not(.theme-light) .stat-card{background:#0f1520}
+  body:not(.theme-light) .icon-wrap{background:#0b0f14}
 }

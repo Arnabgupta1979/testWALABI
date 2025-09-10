@@ -189,10 +189,12 @@
       var btn = null;
       function prefersDark(){ return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; }
       function getSaved(){ return localStorage.getItem(storageKey); }
+      function clearThemes(){ document.body.classList.remove('theme-dark','theme-light'); }
       function applyTheme(mode){
         var body = document.body;
+        clearThemes();
         var isDark = mode === 'dark' || (mode === null && prefersDark());
-        body.classList.toggle('theme-dark', isDark);
+        if(isDark){ body.classList.add('theme-dark'); } else { body.classList.add('theme-light'); }
         if(btn){
           btn.setAttribute('aria-pressed', String(isDark));
           btn.textContent = isDark ? '☀️' : '🌙';
@@ -212,9 +214,12 @@
       });
       try{
         if(window.matchMedia){
-          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(){
-            if(!getSaved()){ applyTheme(null); }
-          });
+          var mq = window.matchMedia('(prefers-color-scheme: dark)');
+          if(mq.addEventListener){
+            mq.addEventListener('change', function(){ if(!getSaved()){ applyTheme(null); } });
+          } else if(mq.addListener){
+            mq.addListener(function(){ if(!getSaved()){ applyTheme(null); } });
+          }
         }
       }catch(e){}
     })();
