@@ -171,6 +171,19 @@ h4{font-size:var(--h4)}
   *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important}
 }
 
+/* ---------- Force dark theme via class ---------- */
+body.theme-dark{
+  --ink:#e6e9ee; --muted:#98a2b3; --bg:#0b0f14; --card:#0f1520; --line:#1f2937;
+  --shadow-sm:0 2px 8px rgba(0,0,0,.4);
+  --shadow-md:0 12px 28px rgba(0,0,0,.55);
+}
+body.theme-dark .site-header{background:rgba(11,15,20,.7)}
+body.theme-dark .btn{background:#0f1520}
+body.theme-dark .btn-ghost{background:transparent}
+body.theme-dark .chip{background:#0f1520}
+body.theme-dark .card, body.theme-dark .panel, body.theme-dark .stat-card{background:#0f1520}
+body.theme-dark .icon-wrap{background:#0b0f14}
+
 /* ---------- Dark mode ---------- */
 @media (prefers-color-scheme: dark){
   :root{
